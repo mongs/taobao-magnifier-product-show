@@ -1,0 +1,146 @@
+/**
+* project-name: 淘宝放大镜展示 模拟
+* author: wally
+* date: 2017-08-05
+* email: 1006900636@qq.com
+* qq: 1006900636
+*/
+
+/*样式重置*/
+body {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+/*预定义 通用样式*/
+.hidden{
+    display: none;
+}
+/*主内容*/
+.wrap {
+    margin: 50px auto;
+    width: 1000px;
+}
+.content, .content-s, .content-b{
+    float: left;
+}
+/*中图片*/
+.content-m{
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+.content-m img{
+    display: block;
+    width: 100%;height: auto;
+}
+/*放大镜*/
+.magnifier{
+    position: absolute;
+    left: 100px;top: 100px;
+    width: 200px;
+    height: 200px;
+    background: url(../images/dot.png) repeat left top;
+}
+/*小图片*/
+.content-s{
+    margin-top: 5px;
+    height: 80px;
+}
+.content-s img{
+    box-sizing: border-box;
+    float: left;
+    width: 76px;
+    height: 76px;
+    margin-right: 5px;
+}
+.content-s img.active,.carousel-right img.active{
+    border: 3px solid #f00;
+}
+.content-s img:last-child{
+    margin-right: 0;
+}
+/*高清 大图片*/
+.content-b{
+    position: relative;
+    margin-left: 5px;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+}
+.img-b{
+    position: absolute;
+    width: 800px;
+    height: 800px;
+}
+/*modal
+    注意这里 完全盖住 窗口  的 写法
+*/
+.modal {
+    z-index: 9999;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+/*注意这里  居中  的写法*/
+.carousel{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -315px;
+    margin-left: -490px;
+    box-sizing: border-box;
+    width: 980px;
+    height: 630px;
+    padding: 50px 20px;
+    overflow: hidden;
+    background: #000;
+}
+.carousel-left{
+    float: left;
+    width: 800px;
+    height: 100%;
+    background-image: url(../images/b01.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+/*箭头*/
+.arrow{
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    width: 25px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "宋体";
+    font-size: 50px;
+    font-weight: 600;
+    color: rgba(255,255,255,.6);
+    cursor: pointer;
+    user-select: none;
+}
+.arrow-left{
+    left: 0
+}
+.arrow-right{
+    right: 180px;
+}
+.carousel-right{
+    float: right;
+    margin: -50px -20px;
+    width: 160px;
+    height: 630px;
+    background: #fff;
+}
+.carousel-right img{
+    box-sizing: border-box;
+    width: 70px;
+    border: 5px solid #fff;
+}
